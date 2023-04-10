@@ -16,18 +16,16 @@ public class Flopmas
         return result;
     }
 
-    public void singDay(int totalDays)
+    public void singDay(int totalDays, int start, int end)
     {
-        int current = totalDays;
-        if (totalDays == current)
+        if(totalDays == 0)
         {
-            result += "On the " + ordinal[current - 1] + " day of Flopmas, Floppa gave to me, ";
+            addGift(0);
         }
         else
         {
-            singDay(current-1);
-            addGift(current-1);
-
+            singDay(totalDays-1, start-1, end);
+            addGift(start);
         }
     }
 
